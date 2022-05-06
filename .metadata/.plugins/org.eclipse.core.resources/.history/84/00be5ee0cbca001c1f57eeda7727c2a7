@@ -1,0 +1,9 @@
+package com.qart.StockMarket.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.qart.StockMarket.model.CompanyDetails;
+
+public interface CompanyDetailsRepository extends JpaRepository<CompanyDetails, Long>{
+
+}

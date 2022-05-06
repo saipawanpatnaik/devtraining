@@ -1,0 +1,5 @@
+package com.qart.StockMarket.boundaryTestCases;
+
+public class exceptionTestCases {
+
+}

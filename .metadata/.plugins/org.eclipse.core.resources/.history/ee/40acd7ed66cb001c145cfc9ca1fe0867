@@ -1,0 +1,5 @@
+package com.qart.StockMarket.dto;
+
+public class CompanyStockDetailsDTO {
+
+}

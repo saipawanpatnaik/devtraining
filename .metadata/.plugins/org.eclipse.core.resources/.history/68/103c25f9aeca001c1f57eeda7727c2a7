@@ -1,0 +1,38 @@
+package com.qart.StockMarket.services;
+
+import java.util.Optional;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.qart.StockMarket.dto.CompanyDetailsDTO;
+import com.qart.StockMarket.exception.CompanyNotFoundException;
+import com.qart.StockMarket.model.CompanyDetails;
+import com.qart.StockMarket.repository.CompanyDetailsRepository;
+
+@Service
+public class CompanyDetailsServiceImpl implements CompanyDetailsService{
+	
+	@Autowired
+	private CompanyDetailsRepository companyDetailsRepository;
+
+	@Override
+	public CompanyDetailsDTO saveCompanyDetails(CompanyDetailsDTO companyDetailsDTO) {
+		CompanyDetails companyDetails = new CompanyDetails();
+		BeanUtils.copyProperties(companyDetailsDTO,companyDetails);
+		companyDetailsRepository.save(companyDetails);
+		return companyDetailsDTO;
+	}
+
+	public boolean deleteCompany(Long companyCode) {
+		Optional<CompanyDetails> company = companyDetailsRepository.findById(companyCode);
+		if(company.isPresent()) {
+			companyDetailsRepository.delete(company.get());
+			return true;	
+		}else {
+			throw new CompanyNotFoundException("Company with Code " + companyCode + " is not found");
+		}
+	}
+
+}

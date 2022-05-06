@@ -1,0 +1,10 @@
+package com.qart.StockMarket.model;
+
+import java.io.Serializable;
+
+public class StockPriceDetails implements Serializable{
+
+	
+	private static final long serialVersionUID = -7695345309639827086L;
+
+}

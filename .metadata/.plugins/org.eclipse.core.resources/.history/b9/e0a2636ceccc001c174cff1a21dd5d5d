@@ -1,0 +1,5 @@
+package com.qart.StockMarket.configurations;
+
+public class AppConfigurations {
+
+}

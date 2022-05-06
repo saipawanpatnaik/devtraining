@@ -1,0 +1,5 @@
+package com.qart.StockMarket.model;
+
+public class CompanyDetails {
+
+}

@@ -1,0 +1,44 @@
+package com.qart.StockMarket.boundaryTestCases;
+
+import java.io.Serializable;
+import java.util.Set;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.qart.StockMarket.dto.CompanyDetailsDTO;
+import com.qart.StockMarket.utilTestClass.MasterData;
+
+@ExtendWith(SpringExtension.class)
+@RunWith(JUnitPlatform.class)
+public class BoundaryTests implements Serializable{
+
+	private static final long serialVersionUID = 5967325887443106688L;
+	
+	private Validator validator;
+	
+	@BeforeEach
+    public void setUp() {
+    	ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
+    }
+	
+	@Test
+	public void testStockExchangeLength() throws Exception 
+	{
+		CompanyDetailsDTO companyDetails = MasterData.getCompanyDetailsDTO();
+		companyDetails.setStockExchange("SE");
+		Set<ConstraintViolation<CompanyDetailsDTO>> violations = validator.validate(companyDetails);
+		//yakshaAssert(currentTest(), !violations.isEmpty()? true : false, boundaryTestFile);
+	}
+
+}

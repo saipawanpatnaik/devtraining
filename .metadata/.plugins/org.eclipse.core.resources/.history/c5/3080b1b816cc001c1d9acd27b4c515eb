@@ -1,0 +1,9 @@
+package com.qart.StockMarket.services;
+
+import com.qart.StockMarket.dto.CompanyDetailsDTO;
+
+public interface CompanyDetailsService {
+	
+	public CompanyDetailsDTO saveCompanyDetails(CompanyDetailsDTO companyDetailsDTO);
+	public boolean deleteCompany(Long companyCode);	
+}

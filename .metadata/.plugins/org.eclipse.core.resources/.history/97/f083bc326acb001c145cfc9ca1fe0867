@@ -1,0 +1,53 @@
+package com.qart.StockMarket.dto;
+
+import java.util.List;
+
+public class CompanyStockDetailsDTO {
+	
+	private CompanyDetailsDTO companyDto;
+	private List<StockPriceDetailsDTO> stockPriceDTO;
+	public List<StockPriceDetailsDTO> getStockPriceDTO() {
+		return stockPriceDTO;
+	}
+	public void setStockPriceDTO(List<StockPriceDetailsDTO> stockDtos) {
+		this.stockPriceDTO = stockDtos;
+	}
+	public CompanyDetailsDTO getCompanyDto() {
+		return companyDto;
+	}
+	public void setCompanyDto(CompanyDetailsDTO companyDto) {
+		this.companyDto = companyDto;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((companyDto == null) ? 0 :companyDto.hashCode());
+		result = prime * result + ((stockPriceDTO == null) ? 0 : stockPriceDTO.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CompanyStockDetailsDTO other = (CompanyStockDetailsDTO) obj;
+		if (companyDto == null) {
+			if (other.companyDto != null)
+				return false;
+		} else if (!companyDto.equals(other.companyDto))
+			return false;
+		if (stockPriceDTO == null) {
+			if (other.stockPriceDTO != null)
+				return false;
+		} else if (!stockPriceDTO.equals(other.stockPriceDTO))
+			return false;
+		return true;
+	}
+	
+
+}

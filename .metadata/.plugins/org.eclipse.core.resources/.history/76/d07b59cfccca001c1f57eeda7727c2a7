@@ -1,0 +1,21 @@
+package com.qart.StockMarket.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(name="CompanyDetails",uniqueConstraints = {@UniqueConstraint(columnNames = "companyCode")})
+public class CompanyDetails implements Serializable{
+	
+	private Long companyCode;
+	private String stockExchange;
+	private String companyName;
+	private String companyCEO;
+	private Double turnover;
+    private String boardOfDirectors;
+  	private String companyProfile;
+
+}

@@ -1,0 +1,37 @@
+package com.qart.StockMarket.utils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+
+import com.qart.StockMarket.dto.CompanyDetailsDTO;
+import com.qart.StockMarket.dto.StockPriceDetailsDTO;
+import com.qart.StockMarket.model.CompanyDetails;
+import com.qart.StockMarket.model.StockPriceDetails;
+
+public class StockMarketUtility {
+	
+	 public static List<CompanyDetailsDTO> convertToCompanyDetailsDtoList(List<CompanyDetails> companyDetailsList) {
+	    	
+	        List<CompanyDetailsDTO> list = new ArrayList<CompanyDetailsDTO>();
+	        
+	        for(CompanyDetails companyDto: companyDetailsList) {
+	            list.add(convertToCompanyDetailsDTO(companyDto));
+	        }       
+	        return list;
+	    }
+		//---------------------------------------------------------------------------------------------------------------------------------
+	    public static List<StockPriceDetailsDTO> convertToStockPriceDetailsDtoList(List<StockPriceDetails> stockPriceDetailsList) {
+	    	
+			List<StockPriceDetailsDTO> list = new ArrayList<StockPriceDetailsDTO>();
+			
+			for(StockPriceDetails stockDto : stockPriceDetailsList) {
+				StockPriceDetailsDTO stockPriceDetailsDTO = new StockPriceDetailsDTO();
+				BeanUtils.copyProperties(stockDto, stockPriceDetailsDTO);
+				list.add(stockPriceDetailsDTO);
+			}
+			return list;
+	    }
+
+}

@@ -1,0 +1,5 @@
+package com.qart.StockMarket.services;
+
+public class CompanyDetailsServiceImpl {
+
+}

@@ -1,0 +1,49 @@
+package com.qart.StockMarket.functionalTestCases;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.qart.StockMarket.controller.CompanyDetailsController;
+import com.qart.StockMarket.controller.StockPriceController;
+import com.qart.StockMarket.dto.CompanyDetailsDTO;
+import com.qart.StockMarket.dto.StockPriceDetailsDTO;
+import com.qart.StockMarket.dto.StockPriceIndexDTO;
+import com.qart.StockMarket.services.CompanyDetailsService;
+import com.qart.StockMarket.services.StockMarketService;
+import com.qart.StockMarket.utilTestClass.MasterData;
+
+import static com.qart.StockMarket.utilTestClass.TestUtils.businessTestFile;
+import static com.qart.StockMarket.utilTestClass.TestUtils.currentTest;
+import static com.qart.StockMarket.utilTestClass.TestUtils.testAssert;
+
+@WebMvcTest({CompanyDetailsController.class, StockPriceController.class})
+@AutoConfigureMockMvc
+public class ControllerTests {
+	
+
+	@Autowired
+	private MockMvc mockMvc;
+	
+	@MockBean
+	private CompanyDetailsService companyService;
+
+	@MockBean
+	private StockMarketService stockMarketService;
+
+	
+}

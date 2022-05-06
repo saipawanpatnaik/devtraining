@@ -1,0 +1,27 @@
+package com.qart.StockMarket.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.qart.StockMarket.dto.CompanyDetailsDTO;
+import com.qart.StockMarket.repository.CompanyDetailsRepository;
+
+@Service
+public class CompanyDetailsServiceImpl implements CompanyDetailsService{
+	
+	@Autowired
+	private CompanyDetailsRepository companyDetailsRepository;
+
+	@Override
+	public CompanyDetailsDTO saveCompanyDetails(CompanyDetailsDTO companyDetailsDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CompanyDetailsDTO deleteCompany(Long companyCode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

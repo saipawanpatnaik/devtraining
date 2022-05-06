@@ -1,0 +1,19 @@
+package com.qart.StockMarket.dto;
+
+public class CompanyDetailsDTO {
+	
+	private Long companyCode;
+	
+	private String stockExchange;
+	
+	private String companyName;
+	
+	private String companyCEO;
+	
+	private Double turnover;
+	
+	private String boardOfDirectors;
+	
+	private String companyProfile;
+
+}

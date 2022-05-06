@@ -1,0 +1,5 @@
+
+testDeleteCompany=true
+testDeleteCompanyBDD=true
+testAddCompanyBDD=true
+testAddCompany=true

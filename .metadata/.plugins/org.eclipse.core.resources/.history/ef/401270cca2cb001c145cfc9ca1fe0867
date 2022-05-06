@@ -1,0 +1,13 @@
+package com.qart.StockMarket.services;
+
+import java.util.List;
+
+import com.qart.StockMarket.dto.CompanyDetailsDTO;
+import com.qart.StockMarket.dto.StockPriceDetailsDTO;
+
+public interface CompanyDetailsService {
+	
+	public CompanyDetailsDTO saveCompanyDetails(CompanyDetailsDTO companyDetailsDTO);
+	public boolean deleteCompany(Long companyCode);
+	public List<CompanyDetailsDTO> getAllStocksByCompanyCode(Long companyCode);
+}

@@ -1,0 +1,14 @@
+package com.qart.StockMarket.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.qart.StockMarket.repository.CompanyDetailsRepository;
+
+@Service
+public class CompanyDetailsServiceImpl implements CompanyDetailsService{
+	
+	@Autowired
+	private CompanyDetailsRepository repository;
+
+}

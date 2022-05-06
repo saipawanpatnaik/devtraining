@@ -1,0 +1,5 @@
+package com.qart.StockMarket.exception;
+
+public class InvalidCompanyException {
+
+}

@@ -1,0 +1,4 @@
+
+testCompanyForExceptionUponAddingCompanyWithNullValue=true
+testCompanyNotFoundExceptions=true
+testCompanyForInvalidDataException=true
